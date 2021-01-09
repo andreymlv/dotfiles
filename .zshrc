@@ -31,10 +31,11 @@ SAVEHIST=1000
 #------------------------------
 # Variables
 #------------------------------
-export BROWSER="chromium"
-export EDITOR="nvim"
+export BROWSER="firefox-nightly"
+export EDITOR="vim"
 export PATH="${PATH}:${HOME}/bin:${HOME}/.cabal/bin"
 export GOPATH="$HOME/go"
+export QT_SELECT=6
 
 #-----------------------------
 # Dircolors
