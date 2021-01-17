@@ -1,10 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
-Plug 'morhetz/gruvbox'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
@@ -15,22 +15,19 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
+let g:airline#extensions#tabline#enabled = 1
+
 let g:ycm_confirm_extra_conf = 0
 
 set pastetoggle=<F2>
 
-
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-						\ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-autocmd BufWinEnter * silent NERDTreeMirror
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 let NERDTreeMinimalUI=1
 
-nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 
 
 " make YCM compatible with UltiSnips (using supertab)
@@ -42,9 +39,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-autocmd vimenter * ++nested colorscheme gruvbox
-set background=dark    " Setting dark mode
 
 " Enable mouse in all modes
 set mouse=a
