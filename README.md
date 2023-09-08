@@ -2,6 +2,6 @@
 
 Install with:
     
-    chezmoi init
+    chezmoi init andreymlv
 
 
